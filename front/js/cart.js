@@ -215,7 +215,11 @@ function supprimerProduit() {
             //Ou que la couleur et strictement égale a la couleur supprimé
             produitLocalStorage = produitLocalStorage.filter(el => el.id !== idDelete || el.color !== colorDelete);
 
-            localStorage.setItem("tableau", JSON.stringify(produitLocalStorage));
+            if (produitLocalStorage.length === 0) {
+                localStorage.clear();
+            } else {
+                localStorage.setItem("tableau", JSON.stringify(produitLocalStorage));
+            }
 
             alert("Vous avez supprimé le produit");
             location.reload();
