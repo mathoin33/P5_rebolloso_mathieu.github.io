@@ -94,12 +94,12 @@ function ajouteAuxPanier(data){
 
 
                 if (checkProduit) {
-                    if (window.confirm(`Vous possèdez déjà ce produit dans votre panier, voulez-vous rajouter le produit suivant: ${choiceQuantity} ${data.name} ${choiceColor} en plus de celui déjà présent dans le panier.`)) {
+                    if (window.confirm(`Vous possédez déjà ce produit dans votre panier, voulez-vous rajouter le produit suivant: ${choiceQuantity} ${data.name} ${choiceColor} en plus de celui déjà présent dans le panier.`)) {
                         window.location.href = "cart.html";
                         return true
                     }
                 } else {
-                    if (window.confirm(`Vous possèdez déjà un produit dans votre panier, voulez-vous rajouter le produit suivant: ${choiceQuantity} ${data.name} ${choiceColor} a votre panier.`)) {
+                    if (window.confirm(`Vous possédez déjà un produit dans votre panier, voulez-vous rajouter le produit suivant: ${choiceQuantity} ${data.name} ${choiceColor} a votre panier.`)) {
                         window.location.href = "cart.html";
                         return true
                     }
@@ -119,7 +119,7 @@ function ajouteAuxPanier(data){
             //Si le produit est présent alors on ajoute simplement la nouvelle quantité
             if (checkProduit) {
                 if (popupConfirmation()) {
-                    //On additionne la quantité qu'on a séléctionner avec l'ancien produit dans le panier
+                    //On additionne la quantité qu'on a sélectionné avec l'ancien produit dans le panier
                     checkProduit.quantity = parseInt(tableauOption.quantity) + parseInt(checkProduit.quantity);
                     //Puis on l'ajoute au local storage
                     localStorage.setItem("tableau", JSON.stringify(getProduit));
