@@ -5,10 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2c4f91df-cd92-4bc1-b02a-2a7bf8a95f31" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../project open classroom/    Rebollso_Mathieu_P2_transformez-une-maquette-en-site-web-avec-html-css_26-12-2021/.idea/nom_prenom_P2_transformez-une-maquette-en-site-web-avec-html-css_26-12-2021.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../project open classroom/open class room/.idea/open class room.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../sass/.idea/sass.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/js/cart.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/js/cart.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/js/script.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,12 +45,16 @@
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="MTCustomThemeConfigurable" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JavaScript Debug.index.html (1)">
+    <configuration name="index.html (1)" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/P5_rebolloso_code/P5_rebolloso_mathieu/front/html/index.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
     <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/P5_rebolloso_mathieu/front/html/index.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JavaScript Debug.index.html (1)" />
         <item itemvalue="JavaScript Debug.index.html" />
       </list>
     </recent_temporary>
@@ -65,6 +68,7 @@
       <option name="presentableId" value="Default" />
       <updated>1647816257629</updated>
       <workItem from="1647816261673" duration="1545000" />
+      <workItem from="1647901249752" duration="1787000" />
     </task>
     <servers />
   </component>
@@ -81,5 +85,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

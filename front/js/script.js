@@ -12,7 +12,7 @@ function req() {
 function appendItem(id, name, image, altText, desc) {
     // ajout de l'élément a
     const a = document.createElement("a");
-    a.setAttribute("href", `/P5_rebolloso_mathieu/front/html/product.html?id=${id}`)
+    a.setAttribute("href", `/P5_rebolloso_code/front/html/product.html?id=${id}`)
 // ajout de l'élément a
     const article = document.createElement("article");
 

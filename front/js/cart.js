@@ -228,7 +228,6 @@ function supprimerProduit() {
 }
 
 function getForm() {
-
     let form = document.querySelector(".cart__order__form");
 
     //Création des expressions régulières
@@ -244,10 +243,8 @@ function getForm() {
         //On teste que l'utilisateur ne mettent pas n'importe quoi, il est autorisé a mettre tout ce qui est dans la regex
         if (charRegExp.test(this.value)) {
             firstNameErrorMsg.innerHTML = '';
-            return true;
         } else {
             firstNameErrorMsg.innerHTML = 'Caractère interdit';
-            return false;
         }
     });
 
@@ -257,10 +254,8 @@ function getForm() {
 
         if (charRegExp.test(this.value)) {
             lastNameErrorMsg.innerHTML = '';
-            return true;
         } else {
             lastNameErrorMsg.innerHTML = 'Veuillez renseigner ce champ.';
-            return false;
         }
     });
 
@@ -270,10 +265,8 @@ function getForm() {
 
         if (addressRegExp.test(this.value)) {
             addressErrorMsg.innerHTML = '';
-            return true;
         } else {
             addressErrorMsg.innerHTML = 'Veuillez renseigner ce champ.';
-            return false;
         }
 
     });
@@ -284,10 +277,8 @@ function getForm() {
 
         if (charRegExp.test(this.value)) {
             cityErrorMsg.innerHTML = '';
-            return true;
         } else {
             cityErrorMsg.innerHTML = 'Veuillez renseigner ce champ.';
-            return false;
         }
     });
 
@@ -297,13 +288,50 @@ function getForm() {
 
         if (emailRegExp.test(this.value)) {
             emailErrorMsg.innerHTML = '';
-            return true;
         } else {
             emailErrorMsg.innerHTML = 'Veuillez renseigner votre email.';
-            return false;
         }
     });
 
+}
+        //fontcion qui empeche l'utilisateur de commander si il n'a pas bien remplis les champs du formulaire
+function regex()
+{
+    let emailRegExp = new RegExp('^[a-zA-Z0-9.-_]+[@]{1}[a-zA-Z0-9.-_]+[.]{1}[a-z]{2,10}$');
+    let charRegExp = new RegExp("^[a-zA-Z ,.'-]+$");
+    let addressRegExp = new RegExp("^[0-9]{1,3}(?:(?:[,. ]){1}[-a-zA-Zàâäéèêëïîôöùûüç]+)+");
+
+    if (!charRegExp.test(document.getElementById("firstName").value)) {
+        let firstNameErrorMsg = document.getElementById("firstNameErrorMsg");
+        firstNameErrorMsg.innerHTML = 'Caractère interdit';
+        return false;
+    }
+
+    if (!charRegExp.test(document.getElementById("lastName").value)) {
+        let firstNameErrorMsg = document.getElementById("lastNameErrorMsg");
+        firstNameErrorMsg.innerHTML = 'Caractère interdit';
+        return false;
+    }
+
+    if (!addressRegExp.test(document.getElementById("address").value)) {
+        let firstNameErrorMsg = document.getElementById("addressErrorMsg");
+        firstNameErrorMsg.innerHTML = 'Caractère interdit';
+        return false;
+    }
+
+    if (!charRegExp.test(document.getElementById("city").value)) {
+        let firstNameErrorMsg = document.getElementById("cityErrorMsg");
+        firstNameErrorMsg.innerHTML = 'Caractère interdit';
+        return false;
+    }
+
+    if (!emailRegExp.test(document.getElementById("email").value)) {
+        let firstNameErrorMsg = document.getElementById("emailErrorMsg");
+        firstNameErrorMsg.innerHTML = 'Caractère interdit';
+        return false;
+    }
+
+    return true;
 }
 
 function postForm(){
@@ -323,11 +351,12 @@ function postForm(){
         let inputCity = document.getElementById('city');
         let inputMail = document.getElementById('email');
 
-       if (getForm()) {
-       } else {
-           alert("Vous devez entrer des informations valide")
-           return false;
-       }
+
+        //si les champ sont mal remplis message d'alerte
+        if (!regex()) {
+            alert('Veuillez remplir tout les champs correctement');
+            return false;
+        }
 
         //Si un champ est vide alors on return false pour arrêter le scripte et lancer le message d'erreur
         if (!checkInput()) {
