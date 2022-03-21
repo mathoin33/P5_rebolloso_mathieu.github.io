@@ -244,18 +244,20 @@ function getForm() {
         //On teste que l'utilisateur ne mettent pas n'importe quoi, il est autorisé a mettre tout ce qui est dans la regex
         if (charRegExp.test(this.value)) {
             firstNameErrorMsg.innerHTML = '';
+            return true;
         } else {
             firstNameErrorMsg.innerHTML = 'Caractère interdit';
             return false;
         }
     });
 
-    // Ecoute de la modification du prénom
+    // Ecoute de la modification du nom
     form.lastName.addEventListener('input', function() {
         let lastNameErrorMsg = this.nextElementSibling;
 
         if (charRegExp.test(this.value)) {
             lastNameErrorMsg.innerHTML = '';
+            return true;
         } else {
             lastNameErrorMsg.innerHTML = 'Veuillez renseigner ce champ.';
             return false;
@@ -268,6 +270,7 @@ function getForm() {
 
         if (addressRegExp.test(this.value)) {
             addressErrorMsg.innerHTML = '';
+            return true;
         } else {
             addressErrorMsg.innerHTML = 'Veuillez renseigner ce champ.';
             return false;
@@ -281,6 +284,7 @@ function getForm() {
 
         if (charRegExp.test(this.value)) {
             cityErrorMsg.innerHTML = '';
+            return true;
         } else {
             cityErrorMsg.innerHTML = 'Veuillez renseigner ce champ.';
             return false;
@@ -293,6 +297,7 @@ function getForm() {
 
         if (emailRegExp.test(this.value)) {
             emailErrorMsg.innerHTML = '';
+            return true;
         } else {
             emailErrorMsg.innerHTML = 'Veuillez renseigner votre email.';
             return false;
@@ -317,6 +322,12 @@ function postForm(){
         let inputAdress = document.getElementById('address');
         let inputCity = document.getElementById('city');
         let inputMail = document.getElementById('email');
+
+       if (getForm()) {
+       } else {
+           alert("Vous devez entrer des informations valide")
+           return false;
+       }
 
         //Si un champ est vide alors on return false pour arrêter le scripte et lancer le message d'erreur
         if (!checkInput()) {
