@@ -77,7 +77,6 @@ function ajouteAuxPanier(data){
             quantity: choiceQuantity,
             id: idProduct,
             img: data.imageUrl,
-            prix: data.price,
             alt: data.altTxt,
             name: data.name
         }
